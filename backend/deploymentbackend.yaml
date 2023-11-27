@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-app
+spec:
+  selector:
+    matchLabels:
+      app: backend-app
+  template:
+    metadata:
+      labels:
+        app: backend-app
+    spec:
+      containers:
+      - image: atharva262002/backend-image
+        name:  backend-app
+        ports:
+        - name:  java
+          protocol: TCP
+          containerPort:  8080
